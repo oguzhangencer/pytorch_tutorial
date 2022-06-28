@@ -41,3 +41,25 @@ _, predictions1 = torch.max(Y_pred_good, 1)
 _, predictions2 = torch.max(Y_pred_bad, 1)
 print(f'Actual class: {Y.item()}, Y_pred1: {predictions1.item()}, Y_pred2: {predictions2.item()}')
 
+Y = torch.tensor([2, 0, 1])
+
+Y_pred_good = torch.tensor(
+    [[0.1, 0.2, 3.9],
+     [1.2, 0.1, 0.3],
+     [0.3, 2.2, 0.2]])
+
+Y_pred_bad = torch.tensor(
+    [[0.9, 0.2, 0.1],
+     [0.1, 0.3, 1.5],
+     [1.2, 0.2, 0.5]])
+
+l1 = loss(Y_pred_good, Y)
+l2 = loss(Y_pred_bad, Y)
+print(f'Batch Loss1:  {l1.item():.4f}')
+print(f'Batch Loss2: {l2.item():.4f}')
+
+# get predictions
+_, predictions1 = torch.max(Y_pred_good, 1)
+_, predictions2 = torch.max(Y_pred_bad, 1)
+print(f'Actual class: {Y}, Y_pred1: {predictions1}, Y_pred2: {predictions2}')
+
