@@ -28,3 +28,8 @@ relu = nn.ReLU()
 output = relu(x)
 print(output)
 
+output = F.leaky_relu(x)
+print(output)
+lrelu = nn.LeakyReLU()
+output = lrelu(x)
+print(output)
