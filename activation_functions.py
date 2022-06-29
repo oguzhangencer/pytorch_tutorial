@@ -21,3 +21,10 @@ print(output)
 t = nn.Tanh()
 output = t(x)
 print(output)
+
+output = torch.relu(x)
+print(output)
+relu = nn.ReLU()
+output = relu(x)
+print(output)
+
